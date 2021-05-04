@@ -34,7 +34,7 @@ if [[ "${output_path}" == "" ]]
 then
   output_path="$(pwd)"
 else
-  [[ -d ${output_path} ]] || mkdir --verbose ${output_path}/
+  [[ -d "${output_path}" ]] || mkdir --verbose "${output_path}"/
 fi
 
 # Load and list modules
@@ -45,7 +45,7 @@ module load imagemagick/7.0.9-8
 module list
 
 # Get an array of all SVS filenames (note: this is case-insensitive)
-readarray -t svs_filenames < <(find ${input_path} -type f -iname "*.svs")
+readarray -t svs_filenames < <(find "${input_path}" -type f -iname "*.svs")
 
 for svs_filename in "${svs_filenames[@]}"
 do
