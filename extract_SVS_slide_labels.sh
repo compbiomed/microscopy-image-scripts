@@ -50,7 +50,7 @@ readarray -t svs_filenames < <(find ${input_path} -type f -iname "*.svs")
 for svs_filename in "${svs_filenames[@]}"
 do
   # Replace final (.svs or .SVS) extension with '.jpg' to get output filename
-  output_filename="${output_path}/$(basename "${svs_filename/%.*/.jpg}")"
+  output_filename="${output_path}/$(basename "${svs_filename%.*}").jpg"
   echo "Extracting slide label from '${svs_filename}' to: '${output_filename}'"
   # Check the comments of each image in turn for the leading term "label";
   # if it is a slide label, extract to a read-only JPG and exit the loop
