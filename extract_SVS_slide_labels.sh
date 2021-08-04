@@ -13,7 +13,7 @@ while true
 do
   case "$1" in
     -i|--input-path)
-      output_path="$(realpath "$2")"
+      input_path="$(realpath "$2")"
       shift 2 ;;
     -o|--output-path)
       output_path="$(realpath "$2")"
